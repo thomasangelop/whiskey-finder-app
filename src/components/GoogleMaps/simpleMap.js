@@ -5,6 +5,9 @@ const mapStyles = {
   width: '80%',
   height: '80%'
 };
+const apiKey = require('../../apiKey');
+
+console.log(apiKey);
 
 export class SimpleMaps extends Component {
   state = {
@@ -17,17 +20,15 @@ export class SimpleMaps extends Component {
     return (
       <Map
         google={this.props.google}
-        zoom={8}
+        zoom={13}
         style={mapStyles}
         initialCenter={{
          lat: 44.9778,
-         lng: 93.2650
+         lng: -93.2650
         }}
       />
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBG-J5Cr47kAt6ec5kCphpkcFm-_fBs_uc'
-})(SimpleMaps);
+export default GoogleApiWrapper(apiKey)(SimpleMaps);
