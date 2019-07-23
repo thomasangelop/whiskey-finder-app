@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
+import './simpleMap.css';
+
 const mapStyles = {
-  width: '80%',
-  height: '80%'
+  width: '100%',
+  height: '100%'
 };
 
 const apiKey = require('../../apiKey');
@@ -52,6 +54,7 @@ export class SimpleMaps extends Component {
 
   render() {
     return (
+    <div className="mapBox">
       <Map
         google={this.props.google}
         zoom={13}
@@ -100,8 +103,7 @@ export class SimpleMaps extends Component {
           </div>
         </InfoWindow>
       </Map>
-      //TODO: 'Try and add a few more markers on your map and 
-      //more interactivity to your infoWindow';
+    </div>
     );
   }
 }
